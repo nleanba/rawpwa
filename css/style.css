@@ -26,6 +26,28 @@ body *,
     box-shadow: 1px 2px black;
 }
 
+body {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-bottom: 0;
+    min-height: 100%;
+}
+
+html {
+    background-color: #ddd;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+main {
+    background-color: #abc;
+    flex-grow: 1;
+}
+
 a {
     text-decoration: none;
     background-color: aqua;
@@ -56,20 +78,6 @@ input {
 :focus {
     box-shadow: 1px 2px black, inset 0px 0px 0 2px blue;
     outline: none;
-}
-
-body {
-    border: none;
-    /*background-color: #eee;*/
-    margin: 0 auto;
-}
-
-html {
-    background-color: #ddd;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    width: 100%;
 }
 
 h1,
@@ -109,5 +117,5 @@ ul *::before {
 }
 
 *:last-child {
-    margin-bottom: 0;
+    margin-bottom: 5px;
 }

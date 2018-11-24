@@ -19,12 +19,14 @@
 
 <body>
     <nav><a class="button" href="./">Home</a><a class="button current" href="#">Collatz Conjecture Calculator</a></nav>
-    <h1>Collatz Conjecture Calculator</h1>
-    <input id="input" type="number" placeholder="Input [Number]">
-    <button onclick="calculate()">Calculate <kbd>ENTR</kbd></button>
-    <div id="steps"></div>
-    <div id="number"></div>
-    <div id="history" class="hide">History:</div>
+    <main>
+        <h1>Collatz Conjecture Calculator</h1>
+        <input id="input" type="number" placeholder="Number">
+        <button onclick="c()">Calculate <kbd>ENTR</kbd></button>
+        <div id="steps"></div>
+        <div id="number"></div>
+        <div id="history" class="hide">History:</div>
+    </main>
     <footer>
         Started in Nov 2018. <a href="https://github.com/nleanba/rawpwa">Github repository</a>
     </footer>
