@@ -5,20 +5,32 @@ const hE = document.getElementById("history");
 const s = localStorage;
 let h = {};
 
+const uhE = () => {
+  s.setItem("h", JSON.stringify(h));
+  hE.innerHTML = "History: " +
+    JSON.stringify(Object.entries(h))
+    .replace(/",/g, ': ')
+    .replace(/"/g, '')
+    .replace(/\]+|\[+/g, ' ')
+    .trim();
+  hE.classList.remove("hide");
+};
+
 if (s.getItem("h")) {
   h = JSON.parse(s.getItem("h"));
+  uhE();
 }
 
 iE.addEventListener("keydown", k => {
   if (k.key === "Enter") {
-    calculate();
+    c();
   }
 });
 
 rE.innerHTML = "Steps: " + a(123).join(" → ");
 nE.innerHTML = "Number of Steps: " + a(123).length;
 
-function calculate() {
+function c() {
   let i = Math.floor(iE.value);
   if (i) {
     let l = a(i).length;
@@ -26,13 +38,7 @@ function calculate() {
       Object.assign(h, {
         [i]: l
       });
-      s.setItem("h", JSON.stringify(h));
-      hE.innerHTML = "History: " + JSON.stringify(Object.entries(h))
-        .replace(/",/g, ': ')
-        .replace(/"/g, '')
-        .replace(/\]+|\[+/g, ' ')
-        .trim();
-      hE.classList.remove("hide");
+      uhE();
     }
     iE.classList.remove("error");
     rE.classList.remove("error");
