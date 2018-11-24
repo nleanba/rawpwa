@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d3d3d3" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Hello World">
+    <meta name="msapplication-TileImage" content="images/hello-icon-144.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <title>Hello World</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/hello-icon-152.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+    <nav><a class="button" href="/">Home</a><a class="button current" href="#">Collatz Conjecture Calculator</a></nav>
+    <h1>Collatz Conjecture Calculator</h1>
+    <input id="input" type="number" placeholder="Number">
+    <button onclick="calculate()">Calculate <kbd>RTRN</kbd></button>
+    <div id="steps"></div>
+    <div id="number"></div>
+    <div id="history" class="hide">History:</div>
+</body>
+<script src="js/main.js"></script>
+<script src="js/cccalc.js"></script>
+
+</html>

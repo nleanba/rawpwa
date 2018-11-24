@@ -1,0 +1,108 @@
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css);
+
+*,
+.block,
+.button,
+.error::after {
+    box-sizing: border-box;
+    color: black;
+    font-family: 'Fira Code', monospace;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 2;
+    margin: 0px auto 10px;
+    max-width: 100%;
+    padding: 5px;
+    text-align: left;
+    width: 80ch;
+}
+
+body *,
+.block,
+.button,
+.error::after {
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 1px 2px black;
+}
+
+a {
+    text-decoration: none;
+    background-color: aqua;
+}
+
+a:not(.button) {
+    padding: 1px;
+}
+
+a::before {
+    content: "→ ";
+    white-space: nowrap;
+}
+
+.error::after,
+kbd {
+    padding: 1px;
+    margin: 5px;
+}
+
+button,
+.button,
+input {
+    background-color: aqua;
+    display: block;
+}
+
+body {
+    border: none;
+    /*background-color: #eee;*/
+    margin: 0 auto;
+}
+
+html {
+    background-color: #ddd;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    background-color: yellow;
+}
+
+.current,
+kbd {
+    background-color: #eee;
+}
+
+ul * {
+    border: none;
+    box-shadow: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul *::before {
+    content: "- "
+}
+
+.error {
+    background-color: red;
+}
+
+.error::after {
+    background-color: yellow;
+    content: "!";
+}
+
+.hide {
+    display: none;
+}
+
+*:last-child {
+    margin-bottom: 0;
+}
