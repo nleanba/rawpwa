@@ -1,17 +1,25 @@
 {
-    "name": "Hello World",
-    "short_name": "Hello",
+    "name": "nleanba / rawpwa",
+    "short_name": "rawpwa",
     "icons": [{
-        "src": "images/icon-192.png",
+        "src": "./images/icon-144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+    }, {
+        "src": "./images/icon-152.png",
+        "sizes": "152x152",
+        "type": "image/png"
+    }, {
+        "src": "./images/icon-192.png",
         "sizes": "192x192",
         "type": "image/png"
     }, {
-        "src": "images/icon-512.png",
+        "src": "./images/icon-512.png",
         "sizes": "512x512",
         "type": "image/png"
     }],
     "lang": "en-US",
-    "start_url": "/index.html",
+    "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#00ffff",
     "theme_color": "#d3d3d3"
