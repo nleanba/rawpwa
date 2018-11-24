@@ -16,9 +16,9 @@
    id="svg8"
    inkscape:version="0.92.1 r15371"
    sodipodi:docname="icon.svg"
-   inkscape:export-filename="C:\Users\noam\Documents\Projects\Personal\pwa\images\icon-144.png"
-   inkscape:export-xdpi="276.48001"
-   inkscape:export-ydpi="276.48001">
+   inkscape:export-filename="C:\Users\noam\Documents\Projects\Personal\pwa\images\icon-512.png"
+   inkscape:export-xdpi="983.03998"
+   inkscape:export-ydpi="983.03998">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -30,7 +30,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="16"
      inkscape:cx="28.249475"
-     inkscape:cy="15.494757"
+     inkscape:cy="22.994757"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -100,7 +100,7 @@
      id="layer1"
      transform="translate(-101.33542,-161.26874)">
     <rect
-       style="opacity:1;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       style="opacity:1;fill:#00ffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
        id="rect4515"
        width="13.229167"
        height="13.229167"
