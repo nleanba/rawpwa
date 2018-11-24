@@ -2,29 +2,42 @@ const rE = document.getElementById("steps");
 const nE = document.getElementById("number");
 const iE = document.getElementById("input");
 const hE = document.getElementById("history");
-const h = {};
+const s = localStorage;
+let h = {};
+
+if (s.getItem("h")) {
+  h = JSON.parse(s.getItem("h"));
+}
 
 iE.addEventListener("keydown", k => {
   if (k.key === "Enter") {
     calculate();
-  }});
+  }
+});
 
 rE.innerHTML = "Steps: " + a(123).join(" → ");
 nE.innerHTML = "Number of Steps: " + a(123).length;
 
-function calculate () {
+function calculate() {
   let i = Math.floor(iE.value);
-  if(i) {
+  if (i) {
     let l = a(i).length;
     if (!h[i]) {
-      Object.defineProperty(h, i, {"value": l});
-      hE.innerHTML = hE.innerHTML + " [" + i + ": " + l + "]";
+      Object.assign(h, {
+        [i]: l
+      });
+      s.setItem("h", JSON.stringify(h));
+      hE.innerHTML = "History: " + JSON.stringify(Object.entries(h))
+        .replace(/",/g, ': ')
+        .replace(/"/g, '')
+        .replace(/\]+|\[+/g, ' ')
+        .trim();
       hE.classList.remove("hide");
     }
     iE.classList.remove("error");
     rE.classList.remove("error");
     nE.classList.remove("hide");
-    
+
     rE.innerHTML = "Steps: " + a(i).join(" → ");
     nE.innerHTML = "Number of Steps: " + l;
   } else {
@@ -37,19 +50,18 @@ function calculate () {
   }
 }
 
-function a (n) {
+function a(n) {
   let r = [];
   if (Number.isInteger(n)) {
-    let b
-    = (i) => {
+    let b = (i) => {
       r.push(i);
       if (i === 1) {
         return r;
       }
-      if (i%2 === 0) {
-        return b(i/2);
+      if (i % 2 === 0) {
+        return b(i / 2);
       }
-      return b(i*3+1);
+      return b(i * 3 + 1);
     };
     return b(n);
 
