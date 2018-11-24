@@ -5,7 +5,7 @@
 .button,
 .error::after {
     box-sizing: border-box;
-    color: black;
+    color: #000;
     font-family: 'Fira Code', monospace;
     font-size: 15px;
     font-weight: 400;
@@ -21,9 +21,14 @@ body *,
 .block,
 .button,
 .error::after {
-    background-color: white;
-    border: 1px solid black;
-    box-shadow: 1px 2px black;
+    background-color: #fff;
+    border: 1px solid #000;
+    box-shadow: 1px 2px #000;
+}
+
+body>*,
+kbd {
+    background-color: #aaa;
 }
 
 body {
@@ -43,14 +48,28 @@ html {
     width: 100%;
 }
 
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+nav>.button,
+nav>button {
+    margin-right: 5px;
+    margin-bottom: 10px !important;
+    flex-grow: 1;
+    width: auto;
+}
+
 main {
-    background-color: #abc;
     flex-grow: 1;
 }
 
 a {
     text-decoration: none;
-    background-color: aqua;
+    background-color: #0ff;
 }
 
 a:not(.button) {
@@ -59,7 +78,11 @@ a:not(.button) {
 
 a::before {
     content: "→ ";
-    white-space: nowrap;
+    #fff-space: nowrap;
+}
+
+a.referrer::before {
+    content: "← ";
 }
 
 .error::after,
@@ -71,23 +94,22 @@ kbd {
 button,
 .button,
 input {
-    background-color: aqua;
+    background-color: #0ff;
     display: block;
 }
 
 :focus {
-    box-shadow: 1px 2px black, inset 0px 0px 0 2px blue;
+    box-shadow: 1px 2px #000, inset 0px 0px 0 2px #00f;
     outline: none;
 }
 
 h1,
 h2,
 h3 {
-    background-color: yellow;
+    background-color: #ff0;
 }
 
-.current,
-kbd {
+.current {
     background-color: #eee;
 }
 
@@ -104,11 +126,11 @@ ul *::before {
 }
 
 .error {
-    background-color: red;
+    background-color: #f00;
 }
 
 .error::after {
-    background-color: yellow;
+    background-color: #ff0;
     content: "!";
 }
 
@@ -116,6 +138,6 @@ ul *::before {
     display: none;
 }
 
-*:last-child {
+*:last-child:not(footer) {
     margin-bottom: 5px;
 }
