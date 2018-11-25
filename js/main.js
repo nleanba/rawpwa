@@ -17,11 +17,11 @@ const sites = [{
     {
         'url': './ccc',
         'name': 'Collatz Conjecture Calculator'
-    },
+    }/*,
     {
         'url': './files',
         'name': 'Files'
-    },
+    }*/,
     {
         'url': './score',
         'name': 'Scoreboard'

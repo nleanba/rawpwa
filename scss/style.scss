@@ -25,7 +25,6 @@ body *,
     box-shadow: 1px 2px #000;
 }
 
-body>*,
 kbd {
     background-color: #aaa;
 }
@@ -64,6 +63,10 @@ nav>button {
     margin-bottom: 10px !important;
     flex-grow: 1;
     width: auto;
+}
+
+.full-width {
+    width: 100%;
 }
 
 main {
@@ -121,8 +124,7 @@ ul {
         border: none;
         box-shadow: none;
         list-style-type: none;
-        line-height: 22.3px;
-        margin: 0 !important;
+        margin: 0 0 5px;
         padding: 0;
     }
 
@@ -146,6 +148,11 @@ ul {
 }
 
 ul.graph {
+    * {
+        line-height: 22.3px;
+        margin: 0 !important;
+    }
+
     li {
         &.ul-title {
             font-style: italic;
@@ -304,11 +311,20 @@ ul.graph {
     display: none;
 }
 
+.emptystate:only-child {
+    display: unset;
+}
+
+.emptystate {
+    display: none;
+}
+
 .invisible {
+    background-color: rgba(0, 0, 0, 0);
     border: none;
     box-shadow: none;
+    margin: 0;
     padding: 0;
-    background-color: rgba(0, 0, 0, 0)
 }
 
 *:last-child {

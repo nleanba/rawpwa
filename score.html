@@ -23,28 +23,25 @@
         <h1>Score</h1>
         <section>
             <h2 class="error">Warning</h2>
-            Not functional yet.
+            Don't reload page or score will be lost
         </section>
-        <div id="board" class="flex">
-            <section>
-                <h3>Name</h3>
-                Points
-            </section>
-            <section>
-                <h3>Name</h3>
-                Points
-            </section>
-            <section>
-                <h3>Name</h3>
-                Points
-            </section>
-            <section>
-                <input type="text" placeholder="Name">
-                <button>Add</button>
-            </section>
+        <section>
+            <input type="text" placeholder="Name" id="input-name">
+            <button onclick="btnAdd()" id="input-button">Add</button>
+        </section>
+        <div>
+            <h2>Board</h2>
+            <div id="board" class="invisible flex" style="border-right: black dotted 1px;">
+               <!--<div class="--pe" id="test">
+                    <h3>TEST</h3>
+                    <div id="input-test" contenteditable="true">000</div>
+                </div>-->
+            </div>
+            <button onclick="up()">UP</button>
         </div>
     </main>
     <script src="./js/main.js"></script>
+    <script src="./js/score.js"></script>
 </body>
 
 </html>
