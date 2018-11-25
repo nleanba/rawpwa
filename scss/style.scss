@@ -1,0 +1,294 @@
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css);
+
+*,
+.block,
+.button,
+.error::after {
+    box-sizing: border-box;
+    color: #000;
+    font-family: 'Fira Code', monospace;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 2;
+    margin: 0px auto 10px;
+    padding: 5px;
+    text-align: left;
+    width: 100%;
+}
+
+body *,
+.block,
+.button,
+.error::after {
+    background-color: #fff;
+    border: 1px solid #000;
+    box-shadow: 1px 2px #000;
+}
+
+body>*,
+kbd {
+    background-color: #aaa;
+}
+
+body {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto !important;
+    padding-bottom: 0;
+    min-height: 100%;
+    width: 80ch;
+}
+
+html {
+    background-color: #ddd;
+    min-height: 100%;
+    margin: 0 !important;
+    padding: 0;
+    width: 100%;
+}
+
+.flex,
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+.flex>*,
+nav>.button,
+nav>button {
+    margin-right: 5px;
+    margin-bottom: 10px !important;
+    flex-grow: 1;
+    width: auto;
+}
+
+main {
+    flex-grow: 1;
+}
+
+a {
+    text-decoration: none;
+    background-color: #0ff;
+}
+
+a:not(.button) {
+    padding: 1px 3px;
+}
+
+a::before {
+    content: "→ ";
+    white-space: nowrap;
+}
+
+a.referrer::before {
+    content: "← ";
+}
+
+.error::after,
+kbd {
+    padding: 1px;
+    margin: 5px;
+}
+
+button,
+.button,
+input {
+    background-color: #0ff;
+    display: block;
+}
+
+:focus {
+    box-shadow: 1px 2px #000, inset 0px 0px 0 2px #00f;
+    outline: none;
+}
+
+h1,
+h2,
+h3 {
+    background-color: #ff0;
+}
+
+.current {
+    background-color: #eee;
+}
+
+ul {
+    * {
+        border: none;
+        box-shadow: none;
+        list-style-type: none;
+        line-height: 22.3px;
+        margin: 0 !important;
+        padding: 0;
+    }
+
+    li {
+        &.ul-title {
+            font-style: italic;
+
+            &::before {
+                font-style: normal;
+            }
+
+            &:first-child::before {
+                content: ""
+            }
+        }
+
+        &:first-child::before {
+            content: "┌─ "
+        }
+
+        &::before {
+            content: "├─ "
+        }
+
+        &:last-child::before {
+            content: "└─ "
+        }
+    }
+
+    ul {
+        &:first-child {
+            li.ul-title:first-child::before {
+                content: "┌"
+            }
+            li:first-child::before {
+                content: "┌┬ "
+            }
+        }
+
+        ul {
+            li {
+                &.ul-title:first-child::before {
+                    content: "│├"
+                }
+
+                &:first-child::before {
+                    content: "│├┬─ "
+                }
+
+                &::before {
+                    content: "││├─ "
+                }
+
+                &:last-child::before {
+                    content: "││└─ "
+                }
+            }
+
+            &:last-child {
+                li.ul-title:first-child::before {
+                    content: "│└"
+                }
+
+                li:first-child::before {
+                    content: "│└┬─ "
+                }
+
+                li::before {
+                    content: "│ ├─ "
+                }
+
+                li:last-child::before {
+                    content: "│ └─ "
+                }
+            }
+        }
+
+        li {
+            &.ul-title:first-child::before {
+                content: "├"
+            }
+
+            &:first-child::before {
+                content: "├┬─ "
+            }
+
+            &::before {
+                content: "│├─ "
+            }
+
+            &:last-child::before {
+                content: "│└─ "
+            }
+        }
+
+        &:last-child {
+            li {
+                &.ul-title:first-child::before {
+                    content: "└"
+                }
+
+                &:first-child::before {
+                    content: "└┬─ "
+                }
+
+                &::before {
+                    content: "\00a0├─ "
+                }
+
+                &:last-child::before {
+                    content: "\00a0└─ "
+                }
+            }
+
+            ul {
+                li {
+                    &:first-child::before {
+                        content: "\00a0├┬─ "
+                    }
+
+                    &::before {
+                        content: "\00a0│├─ "
+                    }
+
+                    &:last-child::before {
+                        content: "\00a0│└─ "
+                    }
+                }
+
+                &:last-child {
+                    li:first-child::before {
+                        content: "\00a0└┬─ "
+                    }
+
+                    li::before {
+                        content: "\00a0\00a0├─ "
+                    }
+
+                    li:last-child::before {
+                        content: "\00a0\00a0└─ "
+                    }
+                }
+            }
+        }
+    }
+}
+
+.error {
+    background-color: #f00;
+}
+
+.error::after {
+    background-color: #ff0;
+    content: "!";
+}
+
+.hide {
+    display: none;
+}
+
+.invisible {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0)
+}
+
+*:last-child {
+    margin-bottom: 5px;
+}

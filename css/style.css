@@ -1,143 +1,241 @@
+@charset "UTF-8";
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css);
-
 *,
 .block,
 .button,
 .error::after {
-    box-sizing: border-box;
-    color: #000;
-    font-family: 'Fira Code', monospace;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 2;
-    margin: 0px auto 10px;
-    max-width: 100%;
-    padding: 5px;
-    text-align: left;
-    width: 80ch;
+  box-sizing: border-box;
+  color: #000;
+  font-family: "Fira Code", monospace;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 2;
+  margin: 0px auto 10px;
+  padding: 5px;
+  text-align: left;
+  width: 100%;
 }
 
 body *,
 .block,
 .button,
 .error::after {
-    background-color: #fff;
-    border: 1px solid #000;
-    box-shadow: 1px 2px #000;
+  background-color: #fff;
+  border: 1px solid #000;
+  box-shadow: 1px 2px #000;
 }
 
-body>*,
+body > *,
 kbd {
-    background-color: #aaa;
+  background-color: #aaa;
 }
 
 body {
-    border: none;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto !important;
-    padding-bottom: 0;
-    min-height: 100%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto !important;
+  padding-bottom: 0;
+  min-height: 100%;
+  width: 80ch;
 }
 
 html {
-    background-color: #ddd;
-    height: 100%;
-    margin: 0 !important;
-    padding: 0;
-    width: 100%;
+  background-color: #ddd;
+  min-height: 100%;
+  margin: 0 !important;
+  padding: 0;
+  width: 100%;
 }
 
+.flex,
 nav {
-    display: flex;
-    flex-wrap: wrap;
-    padding-right: 0;
-    padding-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 0;
+  padding-bottom: 0;
 }
 
-nav>.button,
-nav>button {
-    margin-right: 5px;
-    margin-bottom: 10px !important;
-    flex-grow: 1;
-    width: auto;
+.flex > *,
+nav > .button,
+nav > button {
+  margin-right: 5px;
+  margin-bottom: 10px !important;
+  flex-grow: 1;
+  width: auto;
 }
 
 main {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 a {
-    text-decoration: none;
-    background-color: #0ff;
+  text-decoration: none;
+  background-color: #0ff;
 }
 
 a:not(.button) {
-    padding: 1px 3px;
+  padding: 1px 3px;
 }
 
 a::before {
-    content: "→ ";
-    #fff-space: nowrap;
+  content: "→ ";
+  white-space: nowrap;
 }
 
 a.referrer::before {
-    content: "← ";
+  content: "← ";
 }
 
 .error::after,
 kbd {
-    padding: 1px;
-    margin: 5px;
+  padding: 1px;
+  margin: 5px;
 }
 
 button,
 .button,
 input {
-    background-color: #0ff;
-    display: block;
+  background-color: #0ff;
+  display: block;
 }
 
 :focus {
-    box-shadow: 1px 2px #000, inset 0px 0px 0 2px #00f;
-    outline: none;
+  box-shadow: 1px 2px #000, inset 0px 0px 0 2px #00f;
+  outline: none;
 }
 
 h1,
 h2,
 h3 {
-    background-color: #ff0;
+  background-color: #ff0;
 }
 
 .current {
-    background-color: #eee;
+  background-color: #eee;
 }
 
 ul * {
-    border: none;
-    box-shadow: none;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  border: none;
+  box-shadow: none;
+  list-style-type: none;
+  line-height: 22.3px;
+  margin: 0 !important;
+  padding: 0;
 }
-
-ul *::before {
-    content: "- "
+ul li.ul-title {
+  font-style: italic;
+}
+ul li.ul-title::before {
+  font-style: normal;
+}
+ul li.ul-title:first-child::before {
+  content: "";
+}
+ul li:first-child::before {
+  content: "┌─ ";
+}
+ul li::before {
+  content: "├─ ";
+}
+ul li:last-child::before {
+  content: "└─ ";
+}
+ul ul:first-child li.ul-title:first-child::before {
+  content: "┌";
+}
+ul ul:first-child li:first-child::before {
+  content: "┌┬ ";
+}
+ul ul ul li.ul-title:first-child::before {
+  content: "│├";
+}
+ul ul ul li:first-child::before {
+  content: "│├┬─ ";
+}
+ul ul ul li::before {
+  content: "││├─ ";
+}
+ul ul ul li:last-child::before {
+  content: "││└─ ";
+}
+ul ul ul:last-child li.ul-title:first-child::before {
+  content: "│└";
+}
+ul ul ul:last-child li:first-child::before {
+  content: "│└┬─ ";
+}
+ul ul ul:last-child li::before {
+  content: "│ ├─ ";
+}
+ul ul ul:last-child li:last-child::before {
+  content: "│ └─ ";
+}
+ul ul li.ul-title:first-child::before {
+  content: "├";
+}
+ul ul li:first-child::before {
+  content: "├┬─ ";
+}
+ul ul li::before {
+  content: "│├─ ";
+}
+ul ul li:last-child::before {
+  content: "│└─ ";
+}
+ul ul:last-child li.ul-title:first-child::before {
+  content: "└";
+}
+ul ul:last-child li:first-child::before {
+  content: "└┬─ ";
+}
+ul ul:last-child li::before {
+  content: " ├─ ";
+}
+ul ul:last-child li:last-child::before {
+  content: " └─ ";
+}
+ul ul:last-child ul li:first-child::before {
+  content: " ├┬─ ";
+}
+ul ul:last-child ul li::before {
+  content: " │├─ ";
+}
+ul ul:last-child ul li:last-child::before {
+  content: " │└─ ";
+}
+ul ul:last-child ul:last-child li:first-child::before {
+  content: " └┬─ ";
+}
+ul ul:last-child ul:last-child li::before {
+  content: "  ├─ ";
+}
+ul ul:last-child ul:last-child li:last-child::before {
+  content: "  └─ ";
 }
 
 .error {
-    background-color: #f00;
+  background-color: #f00;
 }
 
 .error::after {
-    background-color: #ff0;
-    content: "!";
+  background-color: #ff0;
+  content: "!";
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
-*:last-child:not(footer) {
-    margin-bottom: 5px;
+.invisible {
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0);
 }
+
+*:last-child {
+  margin-bottom: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */
