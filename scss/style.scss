@@ -134,6 +134,26 @@ ul {
                 font-style: normal;
             }
 
+            &::before {
+                content: ""
+            }
+        }
+
+        &::before {
+            content: "- "
+        }
+    }
+}
+
+ul.graph {
+    li {
+        &.ul-title {
+            font-style: italic;
+
+            &::before {
+                font-style: normal;
+            }
+
             &:first-child::before {
                 content: ""
             }
@@ -152,17 +172,18 @@ ul {
         }
     }
 
-    ul {
+    ul.graph {
         &:first-child {
             li.ul-title:first-child::before {
                 content: "┌"
             }
+
             li:first-child::before {
                 content: "┌┬ "
             }
         }
 
-        ul {
+        ul.graph {
             li {
                 &.ul-title:first-child::before {
                     content: "│├"
@@ -237,7 +258,7 @@ ul {
                 }
             }
 
-            ul {
+            ul.graph {
                 li {
                     &:first-child::before {
                         content: "\00a0├┬─ "

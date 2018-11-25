@@ -130,88 +130,101 @@ ul li.ul-title {
 ul li.ul-title::before {
   font-style: normal;
 }
-ul li.ul-title:first-child::before {
+ul li.ul-title::before {
   content: "";
 }
-ul li:first-child::before {
+ul li::before {
+  content: "- ";
+}
+
+ul.graph li.ul-title {
+  font-style: italic;
+}
+ul.graph li.ul-title::before {
+  font-style: normal;
+}
+ul.graph li.ul-title:first-child::before {
+  content: "";
+}
+ul.graph li:first-child::before {
   content: "┌─ ";
 }
-ul li::before {
+ul.graph li::before {
   content: "├─ ";
 }
-ul li:last-child::before {
+ul.graph li:last-child::before {
   content: "└─ ";
 }
-ul ul:first-child li.ul-title:first-child::before {
+ul.graph ul.graph:first-child li.ul-title:first-child::before {
   content: "┌";
 }
-ul ul:first-child li:first-child::before {
+ul.graph ul.graph:first-child li:first-child::before {
   content: "┌┬ ";
 }
-ul ul ul li.ul-title:first-child::before {
+ul.graph ul.graph ul.graph li.ul-title:first-child::before {
   content: "│├";
 }
-ul ul ul li:first-child::before {
+ul.graph ul.graph ul.graph li:first-child::before {
   content: "│├┬─ ";
 }
-ul ul ul li::before {
+ul.graph ul.graph ul.graph li::before {
   content: "││├─ ";
 }
-ul ul ul li:last-child::before {
+ul.graph ul.graph ul.graph li:last-child::before {
   content: "││└─ ";
 }
-ul ul ul:last-child li.ul-title:first-child::before {
+ul.graph ul.graph ul.graph:last-child li.ul-title:first-child::before {
   content: "│└";
 }
-ul ul ul:last-child li:first-child::before {
+ul.graph ul.graph ul.graph:last-child li:first-child::before {
   content: "│└┬─ ";
 }
-ul ul ul:last-child li::before {
+ul.graph ul.graph ul.graph:last-child li::before {
   content: "│ ├─ ";
 }
-ul ul ul:last-child li:last-child::before {
+ul.graph ul.graph ul.graph:last-child li:last-child::before {
   content: "│ └─ ";
 }
-ul ul li.ul-title:first-child::before {
+ul.graph ul.graph li.ul-title:first-child::before {
   content: "├";
 }
-ul ul li:first-child::before {
+ul.graph ul.graph li:first-child::before {
   content: "├┬─ ";
 }
-ul ul li::before {
+ul.graph ul.graph li::before {
   content: "│├─ ";
 }
-ul ul li:last-child::before {
+ul.graph ul.graph li:last-child::before {
   content: "│└─ ";
 }
-ul ul:last-child li.ul-title:first-child::before {
+ul.graph ul.graph:last-child li.ul-title:first-child::before {
   content: "└";
 }
-ul ul:last-child li:first-child::before {
+ul.graph ul.graph:last-child li:first-child::before {
   content: "└┬─ ";
 }
-ul ul:last-child li::before {
+ul.graph ul.graph:last-child li::before {
   content: " ├─ ";
 }
-ul ul:last-child li:last-child::before {
+ul.graph ul.graph:last-child li:last-child::before {
   content: " └─ ";
 }
-ul ul:last-child ul li:first-child::before {
+ul.graph ul.graph:last-child ul.graph li:first-child::before {
   content: " ├┬─ ";
 }
-ul ul:last-child ul li::before {
+ul.graph ul.graph:last-child ul.graph li::before {
   content: " │├─ ";
 }
-ul ul:last-child ul li:last-child::before {
+ul.graph ul.graph:last-child ul.graph li:last-child::before {
   content: " │└─ ";
 }
-ul ul:last-child ul:last-child li:first-child::before {
+ul.graph ul.graph:last-child ul.graph:last-child li:first-child::before {
   content: " └┬─ ";
 }
-ul ul:last-child ul:last-child li::before {
+ul.graph ul.graph:last-child ul.graph:last-child li::before {
   content: "  ├─ ";
 }
-ul ul:last-child ul:last-child li:last-child::before {
+ul.graph ul.graph:last-child ul.graph:last-child li:last-child::before {
   content: "  └─ ";
 }
 
