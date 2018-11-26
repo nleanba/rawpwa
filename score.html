@@ -19,15 +19,16 @@
 </head>
 
 <body>
-    <main>
-        <h1>Score</h1>
-        <section>
+    <main class="flex">
+        <h1 class="full-width">Score</h1>
+        <!--<section>
             <h2 class="error">Warning</h2>
             Don't reload page or score will be lost
-        </section>
+        </section>-->
         <section>
-            <input type="text" placeholder="Name" id="input-name">
-            <button onclick="btnAdd()" id="input-button">Add</button>
+            <div class="input" contenteditable="true" type="text" placeholder="Name" id="input-name"></div>
+            <button onclick="btnAdd()" id="input-button">Add <kbd>ENTER</kbd></button>
+            <button onclick="clearBoard()">X  Clear all</button>
         </section>
         <div>
             <h2>Board</h2>
@@ -37,7 +38,7 @@
                     <div id="input-test" contenteditable="true">000</div>
                 </div>-->
             </div>
-            <button onclick="up()">UP</button>
+            <button onclick="up()">Enter</button>
         </div>
     </main>
     <script src="./js/main.js"></script>

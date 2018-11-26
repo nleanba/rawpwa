@@ -2,25 +2,40 @@ const boardE = document.getElementById("board");
 const inputNE = document.getElementById("input-name");
 const errorE = document.createElement("div");
 errorE.classList = "error";
-const pEA = document.getElementsByClassName("--pe")
-const score = {
-    "test": []
-};
+const pEA = document.getElementsByClassName("--pe");
+const store = localStorage;
+let score = store.getItem("score") ?
+    JSON.parse(store.getItem("score")) : {};
+for (let i = 0; i < pEA.length; i++) {
+    update(pEA[i], false);
+}
+
 const update = (element, add = true) => {
     const id = element.id;
     const oldIE = document.getElementById("input-" + id);
-    if (add) {
-        const regex = /[^0-9.]+/g;
-        const plus =
-            Number.isNaN(Math.floor(oldIE.textContent.replace(regex, ""))) ?
-            0 :
-            Math.floor(oldIE.textContent.replace(regex, ""));
-        score[id].push(plus);
+    if (oldIE) {
+        if (add) {
+            const regex = /[^0-9.]+/g;
+            const plus =
+                Number.isNaN(Math.floor(oldIE.textContent.replace(regex, ""))) ?
+                0 :
+                Math.floor(oldIE.textContent.replace(regex, ""));
+            score[id].push(plus);
+            store.setItem("score", JSON.stringify(score));
+        }
+        //console.log(JSON.parse(store.getItem("score")));
+        oldIE.remove();
     }
-    oldIE.remove();
     const newIE = document.createElement("div");
     newIE.id = "input-" + id;
-    newIE.textContent = "0";
+    newIE.classList = "input";
+    newIE.setAttribute("placeholder", "0");
+    newIE.addEventListener("keydown", e => {
+        if (e.key === "Enter"){
+            up();
+            e.preventDefault();
+        }
+});
     newIE.contentEditable = true;
     if (element.getElementsByTagName("ul")[0]) {
         element.getElementsByTagName("ul")[0].remove();
@@ -32,12 +47,29 @@ const update = (element, add = true) => {
     score[id].forEach(e => {
         sum = sum + e;
         const newLE = document.createElement("li");
-        newLE.textContent = e === null ? "" : sum + " [ +" + e + " ]";
+        newLE.textContent = (e === null) ? "" : (e === 0) ? sum : sum + " [ +" + e + " ]";
         newUL.append(newLE)
     });
     element.append(newUL);
+    console.log(newIE);
     element.append(newIE);
 };
+
+const up = () => {
+    for (let i = 0; i < pEA.length; i++) {
+        update(pEA[i]);
+    }
+};
+
+const clearBoard = (selector = "*") => {
+    console.groupCollapsed("clearing");
+    console.log(store.getItem("score"));
+    console.groupEnd();
+    score = {};
+    store.setItem("score", JSON.stringify(score));
+    boardE.querySelectorAll(selector).forEach(n => n.remove());
+};
+
 const add = (name) => {
     if (document.getElementById(name)) {
         errorE.textContent = name + " already exists"
@@ -48,12 +80,7 @@ const add = (name) => {
         newPE.classList.add("--pe");
         const newTE = document.createElement("h3");
         newTE.textContent = name;
-        const newIE = document.createElement("div");
-        newIE.id = "input-" + name;
-        newIE.textContent = "0";
-        newIE.contentEditable = true;
         newPE.append(newTE);
-        newPE.append(newIE);
         if (!score[name]) {
             let l = {
                 "i": undefined,
@@ -74,19 +101,22 @@ const add = (name) => {
         update(newPE, false);
     }
 };
+Object.entries(score).forEach(e => add(e[0]));
 const btnAdd = () => {
-    if (inputNE.value) {
+    if (inputNE.textContent) {
         inputNE.classList.remove("error");
         errorE.remove();
-        add(inputNE.value);
+        add(inputNE.textContent);
+        inputNE.textContent = "";
     } else {
         errorE.textContent = "Please enter a name"
         inputNE.classList.add("error");
         inputNE.parentElement.append(errorE);
     }
 }
-const up = () => {
-    for (let i = 0; i < pEA.length; i++) {
-        update(pEA[i]);
+inputNE.addEventListener("keydown", e => {
+    if (e.key === "Enter") {
+        btnAdd();
+        e.preventDefault();
     }
-};
+});

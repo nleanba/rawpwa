@@ -17,18 +17,20 @@ const sites = [{
     {
         'url': './ccc',
         'name': 'Collatz Conjecture Calculator'
-    }/*,
-    {
-        'url': './files',
-        'name': 'Files'
-    }*/,
+    }
+    /*,
+        {
+            'url': './files',
+            'name': 'Files'
+        }*/
+    ,
     {
         'url': './score',
         'name': 'Scoreboard'
     }
 ];
 
-console.group("Navigation")
+console.groupCollapsed("Render Navigation")
 if (nav.length === 0) {
     const gnav = document.createElement("nav");
     sites.forEach(s => {
@@ -37,8 +39,8 @@ if (nav.length === 0) {
         ga.classList = ga.href === window.location.href ? "button current" : ga.href === document.referrer ? "button referrer" : "button";
         ga.textContent = s.name || s.url;
         console.groupCollapsed(ga.href);
-        console.log(ga.href === window.location.href ? "current" : ga.href);
-        console.log(ga);
+            console.log(ga.href === window.location.href ? "current" : ga.href);
+            console.log(ga);
         console.groupEnd();
         gnav.appendChild(ga);
     });
@@ -47,7 +49,7 @@ if (nav.length === 0) {
 }
 console.groupEnd();
 
-console.group("Footer")
+console.groupCollapsed("Render Footer")
 if (footer.length === 0) {
     const gfooter = document.createElement("footer");
     gfooter.innerHTML = 'Started in Nov 2018. <a href="https://github.com/nleanba/rawpwa">Github repository</a>';

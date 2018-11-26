@@ -48,6 +48,11 @@ html {
     width: 100%;
 }
 
+div[placeholder]:empty::before {
+    content: attr(placeholder);
+    color: #0006;
+}
+
 .flex,
 nav {
     display: flex;
@@ -73,16 +78,19 @@ main {
     flex-grow: 1;
 }
 
-a {
+a,
+.a {
     text-decoration: none;
     background-color: #0ff;
 }
 
-a:not(.button) {
+a:not(.button),
+.a {
     padding: 1px 3px;
 }
 
-a::before {
+a::before,
+.a::before {
     content: "→ ";
     white-space: nowrap;
 }
@@ -99,7 +107,8 @@ kbd {
 
 button,
 .button,
-input {
+input,
+.input {
     background-color: #0ff;
     display: block;
 }
