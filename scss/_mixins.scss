@@ -1,0 +1,106 @@
+@mixin basic-box {
+    border: none;
+    display: block;
+    height: fit-content;
+    box-sizing: border-box;
+    color: #000;
+    font-family: "Fira Code", monospace;
+    font-size: 15px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin box {
+    @include basic-box;
+    border: 1px solid #000000;
+    //box-shadow: 0px 2px 8px -4px #000000;
+    background-color: #ffffff;
+
+    &-element {
+        @include fullwidth-box;
+    }
+
+    &-input {
+        @include interactive;
+    }
+
+    &-button {
+        @include interactive;
+    }
+
+    &-header {
+        margin-top: 0;
+        border-top: none;
+    }
+
+    &-footer {
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+
+    /*&:focus {
+        box-shadow: 1px 2px #000, inset 0px 0px 0 2px #00f;
+        outline: none;
+    }*/
+}
+
+@mixin card {
+    @include basic-box;
+    box-shadow: 0px 1px 8px -2px #000000;
+    background-color: #ffffff;
+
+
+    &-element {
+        @include fullwidth-box;
+    }
+
+    &-input {
+        @include interactive;
+    }
+
+    &-button {
+        @include interactive;
+    }
+
+    &-header {
+        margin-top: 0;
+        border-top: none;
+    }
+
+    &-footer {
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+
+    /*&:focus {
+        box-shadow: 1px 2px #000, inset 0px 0px 0 2px #00f;
+        outline: none;
+    }*/
+}
+
+@mixin fullwidth-box {
+    @include basic-box;
+    @include text;
+
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 100%;
+    margin: 10px 0;
+}
+
+@mixin text {
+    padding: 5px;
+    text-align: left;
+    line-height: 2;
+}
+
+@mixin interactive {
+    text-decoration: none;
+    background-color: #0ff;
+
+    &:focus {
+        box-shadow: inset 0px 0px 0 2px #00f;
+        outline: none;
+    }
+}

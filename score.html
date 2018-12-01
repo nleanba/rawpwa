@@ -19,26 +19,31 @@
 </head>
 
 <body>
-    <main class="flex">
-        <h1 class="full-width">Score</h1>
-        <!--<section>
+    <!--<section>
             <h2 class="error">Warning</h2>
             Don't reload page or score will be lost
         </section>-->
-        <section>
-            <div class="input" contenteditable="true" type="text" placeholder="Name" id="input-name"></div>
-            <button onclick="btnAdd()" id="input-button">Add <kbd>ENTER</kbd></button>
-            <button onclick="clearBoard()">X  Clear all</button>
-        </section>
-        <div>
-            <h2>Board</h2>
-            <div id="board" class="invisible flex" style="border-right: black dotted 1px;">
-               <!--<div class="--pe" id="test">
+    <main>
+        <div class="card margin-bottom">
+            <h1 class="header-1 card-element card-header card-footer">Score</h1>
+        </div>
+        <div class="main-grid">
+            <aside class="sidebar">
+                <div class="sidebar-header sidebar-element sidebar-input" contenteditable="true" type="text"
+                    placeholder="Name" id="input-name"></div>
+                <button class="sidebar-element sidebar-button" onclick="btnAdd()" id="input-button">Add <kbd>ENTER</kbd></button>
+                <button class="sidebar-element sidebar-button sidebar-footer" onclick="clearBoard()">Clear all</button>
+            </aside>
+            <div class="card">
+                <h2 class="header-2 card-header">Board</h2>
+                <div id="board" class="grid">
+                    <!--<div class="--pe" id="test">
                     <h3>TEST</h3>
                     <div id="input-test" contenteditable="true">000</div>
                 </div>-->
+                </div>
+                <button class="card-element card-button card-footer" onclick="up()">Enter</button>
             </div>
-            <button onclick="up()">Enter</button>
         </div>
     </main>
     <script src="./js/main.js"></script>

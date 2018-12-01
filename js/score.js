@@ -1,7 +1,7 @@
 const boardE = document.getElementById("board");
 const inputNE = document.getElementById("input-name");
 const errorE = document.createElement("div");
-errorE.classList = "error";
+errorE.classList = "sidebar-element error";
 const pEA = document.getElementsByClassName("--pe");
 const store = localStorage;
 let score = store.getItem("score") ?
@@ -28,7 +28,7 @@ const update = (element, add = true) => {
     }
     const newIE = document.createElement("div");
     newIE.id = "input-" + id;
-    newIE.classList = "input";
+    newIE.classList = "box-element box-input box-footer";
     newIE.setAttribute("placeholder", "0");
     newIE.addEventListener("keydown", e => {
         if (e.key === "Enter"){
@@ -78,8 +78,10 @@ const add = (name) => {
         const newPE = document.createElement("div");
         newPE.id = name;
         newPE.classList.add("--pe");
+        newPE.classList.add("box");
         const newTE = document.createElement("h3");
         newTE.textContent = name;
+        newTE.classList = "header-3 box-header";
         newPE.append(newTE);
         if (!score[name]) {
             let l = {

@@ -47,12 +47,11 @@ function c() {
     rE.innerHTML = "Steps: " + a(i).join(" → ");
     nE.innerHTML = "Number of Steps: " + l;
   } else {
-    console.error("Please Enter a Number");
     iE.classList.add("error");
     rE.classList.add("error");
     nE.classList.add("hide");
-    rE.innerHTML = "Please enter a Number";
-    nE.innerHTML = "Please enter a Number";
+
+    rE.innerHTML = "Please enter a Number >= 1";
   }
 }
 
