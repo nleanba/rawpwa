@@ -41,7 +41,8 @@ const update = (element, add = true) => {
         element.getElementsByTagName("ul")[0].remove();
     }
     const newUL = document.createElement("ul");
-    newUL.classList = "invisible";
+    newUL.classList = "card-element";
+    newUL.innerHTML = '<div class="emptystate">Nothing here yet</div>'
     //newUL.contentEditable = true; //let's bother with this another day
     let sum = 0;
     score[id].forEach(e => {

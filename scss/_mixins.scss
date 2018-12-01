@@ -13,7 +13,7 @@
 
 @mixin box {
     @include basic-box;
-    border: 1px solid #000000;
+    //border: 1px solid #000000;
     //box-shadow: 0px 2px 8px -4px #000000;
     background-color: #ffffff;
 
@@ -50,7 +50,6 @@
     box-shadow: 0px 1px 8px -2px #000000;
     background-color: #ffffff;
 
-
     &-element {
         @include fullwidth-box;
     }
@@ -83,8 +82,8 @@
     @include basic-box;
     @include text;
 
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    //border-top: 1px solid black;
+    //border-bottom: 1px solid black;
     width: 100%;
     margin: 10px 0;
 }
@@ -102,5 +101,10 @@
     &:focus {
         box-shadow: inset 0px 0px 0 2px #00f;
         outline: none;
+    }
+
+    &[placeholder]:empty::before {
+        content: attr(placeholder);
+        color: #0009;
     }
 }

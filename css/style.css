@@ -20,10 +20,6 @@ kbd {
 }
 
 
-div[placeholder]:empty::before {
-    content: attr(placeholder);
-    color: #0006;
-}
 
 .flex,
 nav {
@@ -263,8 +259,6 @@ html {
   padding: 5px;
   text-align: left;
   line-height: 2;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
   width: 100%;
   margin: 10px 0;
 }
@@ -278,6 +272,11 @@ html {
   box-shadow: inset 0px 0px 0 2px #00f;
   outline: none;
 }
+.navigation-input[placeholder]:empty::before,
+.footer-input[placeholder]:empty::before {
+  content: attr(placeholder);
+  color: #0009;
+}
 .navigation-button,
 .footer-button {
   text-decoration: none;
@@ -287,6 +286,11 @@ html {
 .footer-button:focus {
   box-shadow: inset 0px 0px 0 2px #00f;
   outline: none;
+}
+.navigation-button[placeholder]:empty::before,
+.footer-button[placeholder]:empty::before {
+  content: attr(placeholder);
+  color: #0009;
 }
 .navigation-header,
 .footer-header {
@@ -315,8 +319,6 @@ html {
   padding: 5px;
   text-align: left;
   line-height: 2;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
   width: 100%;
   margin: 10px 0;
 }
@@ -341,6 +343,11 @@ html {
   box-shadow: inset 0px 0px 0 2px #00f;
   outline: none;
 }
+.button[placeholder]:empty::before,
+.input[placeholder]:empty::before {
+  content: attr(placeholder);
+  color: #0009;
+}
 
 .box {
   border: none;
@@ -353,7 +360,6 @@ html {
   font-weight: 400;
   margin: 0;
   padding: 0;
-  border: 1px solid #000000;
   background-color: #ffffff;
   /*&:focus {
       box-shadow: 1px 2px #000, inset 0px 0px 0 2px #00f;
@@ -374,8 +380,6 @@ html {
   padding: 5px;
   text-align: left;
   line-height: 2;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
   width: 100%;
   margin: 10px 0;
 }
@@ -387,6 +391,10 @@ html {
   box-shadow: inset 0px 0px 0 2px #00f;
   outline: none;
 }
+.box-input[placeholder]:empty::before {
+  content: attr(placeholder);
+  color: #0009;
+}
 .box-button {
   text-decoration: none;
   background-color: #0ff;
@@ -394,6 +402,10 @@ html {
 .box-button:focus {
   box-shadow: inset 0px 0px 0 2px #00f;
   outline: none;
+}
+.box-button[placeholder]:empty::before {
+  content: attr(placeholder);
+  color: #0009;
 }
 .box-header {
   margin-top: 0;
@@ -436,8 +448,6 @@ html {
   padding: 5px;
   text-align: left;
   line-height: 2;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
   width: 100%;
   margin: 10px 0;
 }
@@ -449,6 +459,10 @@ html {
   box-shadow: inset 0px 0px 0 2px #00f;
   outline: none;
 }
+.card-input[placeholder]:empty::before {
+  content: attr(placeholder);
+  color: #0009;
+}
 .card-button {
   text-decoration: none;
   background-color: #0ff;
@@ -456,6 +470,10 @@ html {
 .card-button:focus {
   box-shadow: inset 0px 0px 0 2px #00f;
   outline: none;
+}
+.card-button[placeholder]:empty::before {
+  content: attr(placeholder);
+  color: #0009;
 }
 .card-header {
   margin-top: 0;
@@ -493,8 +511,6 @@ html {
   padding: 5px;
   text-align: left;
   line-height: 2;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
   width: 100%;
   margin: 10px 0;
 }
@@ -542,8 +558,6 @@ html {
   padding: 5px;
   text-align: left;
   line-height: 2;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
   width: 100%;
   margin: 10px 0;
 }
@@ -555,6 +569,10 @@ html {
   box-shadow: inset 0px 0px 0 2px #00f;
   outline: none;
 }
+.sidebar-input[placeholder]:empty::before {
+  content: attr(placeholder);
+  color: #0009;
+}
 .sidebar-button {
   text-decoration: none;
   background-color: #0ff;
@@ -562,6 +580,10 @@ html {
 .sidebar-button:focus {
   box-shadow: inset 0px 0px 0 2px #00f;
   outline: none;
+}
+.sidebar-button[placeholder]:empty::before {
+  content: attr(placeholder);
+  color: #0009;
 }
 .sidebar-header {
   margin-top: 0;
@@ -580,6 +602,10 @@ html {
 .sidebar--collapsed:focus {
   box-shadow: inset 0px 0px 0 2px #00f;
   outline: none;
+}
+.sidebar--collapsed[placeholder]:empty::before {
+  content: attr(placeholder);
+  color: #0009;
 }
 .sidebar--collapsed * {
   display: none;
@@ -604,7 +630,6 @@ html {
   font-weight: 400;
   margin: 0;
   padding: 0;
-  border: 1px solid #000000;
   background-color: #ffffff;
   /*&:focus {
       box-shadow: 1px 2px #000, inset 0px 0px 0 2px #00f;
@@ -626,8 +651,6 @@ html {
   padding: 5px;
   text-align: left;
   line-height: 2;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
   width: 100%;
   margin: 10px 0;
 }
@@ -639,6 +662,10 @@ html {
   box-shadow: inset 0px 0px 0 2px #00f;
   outline: none;
 }
+.emptystate:only-child-input[placeholder]:empty::before {
+  content: attr(placeholder);
+  color: #0009;
+}
 .emptystate:only-child-button {
   text-decoration: none;
   background-color: #0ff;
@@ -646,6 +673,10 @@ html {
 .emptystate:only-child-button:focus {
   box-shadow: inset 0px 0px 0 2px #00f;
   outline: none;
+}
+.emptystate:only-child-button[placeholder]:empty::before {
+  content: attr(placeholder);
+  color: #0009;
 }
 .emptystate:only-child-header {
   margin-top: 0;

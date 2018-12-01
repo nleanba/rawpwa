@@ -20,10 +20,6 @@ kbd {
 }
 
 
-div[placeholder]:empty::before {
-    content: attr(placeholder);
-    color: #0006;
-}
 
 .flex,
 nav {
