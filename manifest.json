@@ -29,5 +29,5 @@
     "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#00ffff",
-    "theme_color": "#d3d3d3"
+    "theme_color": "#ffff00"
 }
